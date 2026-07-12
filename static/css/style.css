@@ -1,0 +1,370 @@
+/* ==========================================================
+   Campus Connect — Custom Stylesheet
+   ========================================================== */
+
+/* ---------- CSS Custom Properties (variables) ---------- */
+:root {
+    --cc-primary: #1a3c6e;
+    --cc-secondary: #2563c7;
+    --cc-accent: #f59e0b;
+    --cc-dark: #111827;
+    --cc-light: #f8f9fa;
+    --cc-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --cc-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --cc-radius: 12px;
+    --cc-transition: 0.25s ease;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cc-light);
+    color: var(--cc-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.py-lg-6 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+/* ---------- Navbar ---------- */
+.cc-navbar {
+    background: linear-gradient(135deg, var(--cc-primary) 0%, var(--cc-secondary) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    backdrop-filter: blur(8px);
+}
+
+.cc-navbar-scrolled {
+    box-shadow: 0 14px 30px rgba(17, 24, 39, 0.16);
+}
+
+.cc-navbar .navbar-brand {
+    letter-spacing: 0.02em;
+}
+
+.cc-navbar .nav-link,
+.cc-navbar .dropdown-item,
+.cc-navbar .navbar-brand {
+    transition: transform var(--cc-transition), color var(--cc-transition), opacity var(--cc-transition);
+}
+
+.cc-navbar .nav-link.active,
+.cc-navbar .nav-link:hover,
+.cc-navbar .navbar-brand:hover {
+    color: var(--cc-accent) !important;
+}
+
+.cc-navbar .nav-link:hover,
+.cc-navbar .navbar-brand:hover {
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.16);
+    padding: 0.75rem;
+}
+
+.dropdown-item {
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 199, 0.08), rgba(245, 158, 11, 0.12));
+    transform: translateX(3px);
+}
+
+/* ---------- Main content spacing ---------- */
+.cc-main-content {
+    min-height: 70vh;
+}
+
+/* ---------- Hero Section ---------- */
+.cc-hero {
+    background: linear-gradient(135deg, var(--cc-primary) 0%, var(--cc-secondary) 100%);
+    position: relative;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.cc-hero h1 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    line-height: 1.3;
+}
+
+.cc-hero .lead {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cc-hero-actions .btn {
+    min-width: 220px;
+}
+
+.cc-hero-wave {
+    display: block;
+    line-height: 0;
+}
+
+.cc-hero-wave svg {
+    width: 100%;
+    height: 60px;
+    display: block;
+}
+
+/* ---------- Feature Cards ---------- */
+.cc-card {
+    border: none;
+    border-radius: var(--cc-radius);
+    box-shadow: var(--cc-card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.cc-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 36px rgba(17, 24, 39, 0.16);
+}
+
+.cc-feature-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+
+.cc-feature-card h5 {
+    margin-bottom: 0.85rem;
+}
+
+.cc-feature-card p {
+    flex-grow: 1;
+}
+
+.cc-card-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #eef4ff 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 8px 20px rgba(37, 99, 199, 0.12);
+}
+
+/* ---------- Statistics Section ---------- */
+.cc-stats {
+    background: linear-gradient(135deg, var(--cc-dark) 0%, #1e3a5f 100%);
+}
+
+.cc-stat-card {
+    border-radius: var(--cc-radius);
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.cc-stat-card:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Footer ---------- */
+.cc-footer {
+    background: linear-gradient(135deg, var(--cc-dark) 0%, #1a2e4a 100%);
+    color: #adb5bd;
+}
+
+.footer-link {
+    color: #adb5bd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    line-height: 2;
+    transition: color var(--cc-transition), transform var(--cc-transition);
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: var(--cc-accent);
+    transform: translateX(3px);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+    filter: saturate(1.02);
+}
+
+.btn-primary {
+    box-shadow: 0 10px 20px rgba(37, 99, 199, 0.18);
+}
+
+.btn-warning {
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.22);
+}
+
+.btn-outline-light:hover,
+.btn-outline-secondary:hover {
+    color: var(--cc-dark);
+}
+
+/* ---------- Section headings ---------- */
+section h2 {
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--cc-accent);
+    border-radius: 2px;
+    margin: 8px auto 0;
+}
+
+/* ---------- Auth pages (login, register) ---------- */
+.card.cc-card {
+    border-radius: var(--cc-radius);
+}
+
+/* ---------- History page ---------- */
+.cc-history-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.cc-history-pill {
+    background: linear-gradient(135deg, rgba(37, 99, 199, 0.12), rgba(245, 158, 11, 0.16));
+    color: var(--cc-primary);
+    border: 1px solid rgba(37, 99, 199, 0.14);
+}
+
+.cc-history-report-card {
+    border-radius: 12px;
+    background: #fcfdff;
+}
+
+.cc-history-empty {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    background: rgba(37, 99, 199, 0.06);
+    color: var(--cc-primary);
+    font-weight: 500;
+}
+
+/* ---------- Form pages ---------- */
+.cc-form-section {
+    background:
+        radial-gradient(circle at top right, rgba(37, 99, 199, 0.08), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.08), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, #f8f9fa 100%);
+}
+
+.cc-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+
+.cc-form-layout .form-label {
+    color: #24364d;
+    margin-bottom: 0.55rem;
+}
+
+.cc-form-layout .form-control,
+.cc-form-layout .form-select {
+    border-radius: 12px;
+    border: 1px solid rgba(26, 60, 110, 0.14);
+    padding: 0.78rem 0.95rem;
+    box-shadow: inset 0 1px 2px rgba(17, 24, 39, 0.02);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.cc-form-layout .form-control:focus,
+.cc-form-layout .form-select:focus {
+    border-color: rgba(37, 99, 199, 0.55);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 199, 0.14);
+    transform: translateY(-1px);
+}
+
+.cc-form-layout .form-check {
+    background: rgba(37, 99, 199, 0.04);
+    border: 1px solid rgba(37, 99, 199, 0.08);
+    border-radius: 12px;
+    padding: 0.95rem 1rem 0.95rem 2.5rem;
+}
+
+.cc-form-layout .form-text {
+    color: #5c6a7d;
+}
+
+/* ---------- Profile page ---------- */
+.cc-profile-header {
+    background: linear-gradient(135deg, var(--cc-primary) 0%, var(--cc-secondary) 100%);
+    border-radius: var(--cc-radius) var(--cc-radius) 0 0;
+}
+
+.cc-profile-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.cc-profile-placeholder {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 768px) {
+    .cc-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .cc-hero-actions .btn {
+        width: 100%;
+    }
+
+    .cc-form-card {
+        padding: 1.5rem !important;
+    }
+
+    .cc-stat-card {
+        margin-bottom: 0.5rem;
+    }
+}
+
